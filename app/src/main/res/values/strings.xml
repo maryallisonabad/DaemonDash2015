@@ -14,5 +14,7 @@
     <string name="title_activity_redeem">RedeemActivity</string>
     <string name="title_activity_budget">BudgetActivity</string>
     <string name="title_activity_chipotle">ChipotleActivity</string>
-    <string name="curBudNum">$0</string>
+    <string name="title_activity_bobbys">BobbysActivity</string>
+    <string name="title_activity_ritas">RitasActivity</string>
+    <string name="title_activity_panda_express">PandaExpressActivity</string>
 </resources>

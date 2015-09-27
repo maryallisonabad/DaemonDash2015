@@ -82,24 +82,28 @@ public class BudgetActivity extends AppCompatActivity {
         if (id == R.id.action_home) {
             Intent intent = new Intent(this, MainDisplayPageActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_savings) {
             Intent intent = new Intent(this, SavingsActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_spending) {
             Intent intent = new Intent(this, SpendingActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_reedem) {
             Intent intent = new Intent(this, RedeemActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

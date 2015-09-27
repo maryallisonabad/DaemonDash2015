@@ -40,18 +40,18 @@ public class RedeemActivity extends AppCompatActivity {
                         intent = new Intent(RedeemActivity.this, ChipotleActivity.class);
                         startActivity(intent);
                         break;
-//                    case 1:
-//                        intent = new Intent(this, BobbysActivity.class);
-//                        startActivity(intent);
-//                        break;
-//                    case 2:
-//                        intent = new Intent(this, RitasActivity.class);
-//                        startActivity(intent);
-//                        break;
-//                    case 3:
-//                        intent = new Intent(this, PandaExpressActivity.class);
-//                        startActivity(intent);
-//                        break;
+                    case 1:
+                        intent = new Intent(RedeemActivity.this, BobbysActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(RedeemActivity.this, RitasActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(RedeemActivity.this, PandaExpressActivity.class);
+                        startActivity(intent);
+                        break;
                 }
             }
         });
