@@ -7,6 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import java.io.FileOutputStream;
 
@@ -43,6 +47,29 @@ public class BudgetActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("budgetGoal", budgetGoal)
      */
+
+    private TextView budgetAmount;
+    private EditText editBudget;
+
+    public void buttonOnClick(View view) {
+        Button button = (Button) view;
+
+        //button.setText("clicked");
+        budgetAmount = (TextView) findViewById(R.id.budText);
+        editBudget = (EditText) findViewById(R.id.editBud);
+
+        //change the budget on screen
+        //String string = getString(R.string.curBudNum);
+
+
+        budgetAmount.setText("$" + editBudget.getText());
+        int newBudget = Integer.parseInt(editBudget.getText().toString());
+
+        //Read in a new budget goal, then write back to preferences
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putInt("budgetGoal", newBudget);
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
