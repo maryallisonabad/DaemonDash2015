@@ -139,9 +139,9 @@ public class SavingsActivity extends AppCompatActivity {
         });
         savings.setTitle("Tracking your Savings");
         savings.addSeries(weeklyPerformance);
-        weeklyPerformance.setColor(Color.GREEN);
+        weeklyPerformance.setColor(Color.rgb(14, 222, 222));
         savings.addSeries(cumulativePerformance);
-        cumulativePerformance.setColor(Color.BLUE);
+        cumulativePerformance.setColor(Color.rgb(211, 230, 41));
         cumulativePerformance.setTitle("Cumulative Savings");
         weeklyPerformance.setTitle("Weekly Savings");
         savings.getLegendRenderer().setVisible(true);
@@ -176,24 +176,28 @@ public class SavingsActivity extends AppCompatActivity {
         if (id == R.id.action_budget) {
             Intent intent = new Intent(this, BudgetActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_home) {
             Intent intent = new Intent(this, MainDisplayPageActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_spending) {
             Intent intent = new Intent(this, SpendingActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_reedem) {
             Intent intent = new Intent(this, RedeemActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
 

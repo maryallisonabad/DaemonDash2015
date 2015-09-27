@@ -35,7 +35,11 @@ import com.example.maryallisonabad.daemondash2015.BudgetWeek;
 import java.text.SimpleDateFormat;
 import java.text.ParsePosition;
 import java.util.Date;
-
+import android.app.PendingIntent;
+import android.content.res.Resources;
+import android.app.Notification;
+import android.support.v4.app.NotificationCompat;
+import android.app.NotificationManager;
 
 public class MainDisplayPageActivity extends AppCompatActivity {
 
@@ -96,7 +100,26 @@ public class MainDisplayPageActivity extends AppCompatActivity {
                 }
             }
         });
-        }
+
+        showNotification();
+
+    }
+
+    public void showNotification() {
+        PendingIntent pi = PendingIntent.getActivity(this, 0, new Intent(this, RedeemActivity.class), 0);
+        Resources r = getResources();
+        Notification notification = new NotificationCompat.Builder(this)
+                .setTicker("Awesome, new redeemable coupon!")
+                .setSmallIcon(android.R.drawable.ic_menu_report_image)
+                .setContentTitle("You're awesome for saving, here's a treat!")
+                .setContentText("Check your Reedeem Rewards page to see your new coupon!")
+                .setContentIntent(pi)
+                .setAutoCancel(true)
+                .build();
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(0, notification);
+    }
 
     public void ProcessAccounts(ArrayList<Account> accounts){
         System.out.println("about to get purchases");
@@ -149,24 +172,28 @@ public class MainDisplayPageActivity extends AppCompatActivity {
         if (id == R.id.action_budget) {
             Intent intent = new Intent(this, BudgetActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_savings) {
             Intent intent = new Intent(this, SavingsActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_spending) {
             Intent intent = new Intent(this, SpendingActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_reedem) {
             Intent intent = new Intent(this, RedeemActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
 

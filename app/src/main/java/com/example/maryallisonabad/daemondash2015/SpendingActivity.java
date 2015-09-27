@@ -171,9 +171,9 @@ public class SpendingActivity extends AppCompatActivity {
         });
         graph.setTitle("Tracking your Spending");
         graph.addSeries(goalBudgets);
-        goalBudgets.setColor(Color.GREEN);
+        goalBudgets.setColor(Color.rgb(14, 222, 222));
         graph.addSeries(actualSpending);
-        actualSpending.setColor(Color.BLUE);
+        actualSpending.setColor(Color.rgb(211, 230, 41));
         goalBudgets.setTitle("Goal Budgets");
         actualSpending.setTitle("Actual Spending");
         graph.getLegendRenderer().setVisible(true);
@@ -210,24 +210,28 @@ public class SpendingActivity extends AppCompatActivity {
         if (id == R.id.action_budget) {
             Intent intent = new Intent(this, BudgetActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_savings) {
             Intent intent = new Intent(this, SavingsActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_home) {
             Intent intent = new Intent(this, MainDisplayPageActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_reedem) {
             Intent intent = new Intent(this, RedeemActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
 
