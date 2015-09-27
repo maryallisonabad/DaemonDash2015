@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.maryallisonabad.daemondash2015.SpendingActivity">
+    <item android:id="@+id/action_home" android:title="Home"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_budget" android:title="Manage Budget"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_savings" android:title="See Savings"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_reedem" android:title="Redeem Rewards"
+        android:orderInCategory="100" app:showAsAction="never" />
+</menu>
