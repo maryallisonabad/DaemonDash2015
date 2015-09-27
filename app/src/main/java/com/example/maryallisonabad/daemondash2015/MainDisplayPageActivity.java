@@ -111,7 +111,7 @@ public class MainDisplayPageActivity extends AppCompatActivity {
         Resources r = getResources();
         Notification notification = new NotificationCompat.Builder(this)
                 .setTicker("Awesome, new redeemable coupon!")
-                .setSmallIcon(android.R.drawable.ic_menu_report_image)
+                .setSmallIcon(R.mipmap.save_money_logo)
                 .setContentTitle("You're awesome for saving, here's a treat!")
                 .setContentText("Check your Reedeem Rewards page to see your new coupon!")
                 .setContentIntent(pi)
