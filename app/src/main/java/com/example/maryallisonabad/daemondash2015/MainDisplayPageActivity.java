@@ -40,6 +40,7 @@ import android.content.res.Resources;
 import android.app.Notification;
 import android.support.v4.app.NotificationCompat;
 import android.app.NotificationManager;
+import android.widget.TextView;
 
 public class MainDisplayPageActivity extends AppCompatActivity {
 
@@ -80,7 +81,7 @@ public class MainDisplayPageActivity extends AppCompatActivity {
 
         settings = getPreferences(0);
         budget = new BudgetWeek();
-        budget.budgetGoal = settings.getInt("budgetGoal", 100);
+        budget.budgetGoal = settings.getInt("budgetGoal", 175);
 
         String key = "0a5f4897eba437d37614b8e66ef996da";
         nessieClient = NessieClient.getInstance();
@@ -158,6 +159,8 @@ public class MainDisplayPageActivity extends AppCompatActivity {
 
         }
         System.out.println("Total Spent this week " + totalSpentThisWeek);
+        TextView text = (TextView) findViewById(R.id.textView);
+        text.setText("You have $"+(budget.budgetGoal-totalSpentThisWeek)+" remaining until your spending limit is reached for the week.");
     }
 
 

@@ -10,7 +10,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You have $50 remaining until your spending limit is reached for the week."
         android:id="@+id/textView"
         android:textSize="30sp"
         android:gravity="center"
