@@ -1,12 +1,19 @@
 package com.example.maryallisonabad.daemondash2015;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.FileOutputStream;
+
 public class BudgetActivity extends AppCompatActivity {
+
+    int budgetGoal;
+    SharedPreferences settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +28,21 @@ public class BudgetActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_budget, menu);
         return true;
     }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        settings = getPreferences(0);
+        budgetGoal = settings.getInt("budgetGoal", 100);
+
+    }
+
+    /*
+    Read in a new budget goal, then write back to preferences
+
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putInt("budgetGoal", budgetGoal)
+     */
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
