@@ -188,42 +188,6 @@ public class SpendingActivity extends AppCompatActivity {
         graph.getViewport().setXAxisBoundsManual(true);
 
 
-        //Savings
-        budgetWeeks.get(0).cumulativeSavings =  budgetWeeks.get(0).getAmountUnderBudget();
-        budgetWeeks.get(1).cumulativeSavings = budgetWeeks.get(0).cumulativeSavings + budgetWeeks.get(1).getAmountUnderBudget();
-        budgetWeeks.get(2).cumulativeSavings = budgetWeeks.get(0).cumulativeSavings + budgetWeeks.get(2).getAmountUnderBudget();
-        budgetWeeks.get(3).cumulativeSavings = budgetWeeks.get(0).cumulativeSavings + budgetWeeks.get(3).getAmountUnderBudget();
-
-        GraphView savings = (GraphView) findViewById(R.id.graph2);
-        LineGraphSeries<DataPoint> weeklyPerformance = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(budgetWeeks.get(0).end, budgetWeeks.get(0).getAmountUnderBudget()),
-                new DataPoint(budgetWeeks.get(1).end, budgetWeeks.get(1).getAmountUnderBudget()),
-                new DataPoint(budgetWeeks.get(2).end, budgetWeeks.get(2).getAmountUnderBudget()),
-                new DataPoint(budgetWeeks.get(3).end, budgetWeeks.get(3).getAmountUnderBudget())
-        });
-        LineGraphSeries<DataPoint> cumulativePerformance = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(budgetWeeks.get(0).end, budgetWeeks.get(0).cumulativeSavings),
-                new DataPoint(budgetWeeks.get(1).end, budgetWeeks.get(1).cumulativeSavings),
-                new DataPoint(budgetWeeks.get(2).end, budgetWeeks.get(2).cumulativeSavings),
-                new DataPoint(budgetWeeks.get(3).end, budgetWeeks.get(3).cumulativeSavings)
-        });
-        savings.setTitle("Tracking your Savings");
-        savings.addSeries(weeklyPerformance);
-        weeklyPerformance.setColor(Color.GREEN);
-        savings.addSeries(cumulativePerformance);
-        cumulativePerformance.setColor(Color.BLUE);
-        cumulativePerformance.setTitle("Cumulative Savings");
-        weeklyPerformance.setTitle("Weekly Savings");
-        savings.getLegendRenderer().setVisible(true);
-        savings.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
-
-        savings.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(this));
-        //savings.getGridLabelRenderer().setNumHorizontalLabels(3); // only 4 because of the space
-
-        // set manual x bounds to have nice steps
-        savings.getViewport().setMinX(budgetWeeks.get(0).end.getTime());
-        savings.getViewport().setMaxX(budgetWeeks.get(3).end.getTime());
-        savings.getViewport().setXAxisBoundsManual(true);
 
     }
 
