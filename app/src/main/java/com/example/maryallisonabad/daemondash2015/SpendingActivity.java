@@ -186,7 +186,8 @@ public class SpendingActivity extends AppCompatActivity {
         graph.getViewport().setMinX(budgetWeeks.get(0).end.getTime());
         graph.getViewport().setMaxX(budgetWeeks.get(3).end.getTime());
         graph.getViewport().setXAxisBoundsManual(true);
-
+        graph.getViewport().setScrollable(true);
+        graph.getViewport().setScalable(true);
 
 
     }

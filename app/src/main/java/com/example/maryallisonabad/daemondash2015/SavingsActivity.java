@@ -154,6 +154,8 @@ public class SavingsActivity extends AppCompatActivity {
         savings.getViewport().setMinX(budgetWeeks.get(0).end.getTime());
         savings.getViewport().setMaxX(budgetWeeks.get(3).end.getTime());
         savings.getViewport().setXAxisBoundsManual(true);
+        savings.getViewport().setScrollable(true);
+        savings.getViewport().setScalable(true);
     }
 
 

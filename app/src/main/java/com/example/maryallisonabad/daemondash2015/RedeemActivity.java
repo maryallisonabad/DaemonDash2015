@@ -38,19 +38,23 @@ public class RedeemActivity extends AppCompatActivity {
                 switch(position) {
                     case 0:
                         intent = new Intent(RedeemActivity.this, ChipotleActivity.class);
-                        startActivity(intent);
+                        startActivityForResult(intent, 1);
+                        finish();
                         break;
                     case 1:
                         intent = new Intent(RedeemActivity.this, BobbysActivity.class);
-                        startActivity(intent);
+                        startActivityForResult(intent, 1);
+                        finish();
                         break;
                     case 2:
                         intent = new Intent(RedeemActivity.this, RitasActivity.class);
-                        startActivity(intent);
+                        startActivityForResult(intent, 1);
+                        finish();
                         break;
                     case 3:
                         intent = new Intent(RedeemActivity.this, PandaExpressActivity.class);
-                        startActivity(intent);
+                        startActivityForResult(intent, 1);
+                        finish();
                         break;
                 }
             }
