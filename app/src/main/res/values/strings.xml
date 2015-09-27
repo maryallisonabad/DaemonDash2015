@@ -17,4 +17,5 @@
     <string name="title_activity_bobbys">BobbysActivity</string>
     <string name="title_activity_ritas">RitasActivity</string>
     <string name="title_activity_panda_express">PandaExpressActivity</string>
+    <string name="curBudNum">$100</string>
 </resources>
